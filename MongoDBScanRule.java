@@ -111,7 +111,6 @@ public class MongoDbScanRule extends AbstractAppParamPlugin {
     // Init Variables
     private boolean isJsonPayload;
     private boolean doAllDataScan;
-    private boolean doCrashScan;
     private boolean doJsonScan;
     private boolean getMoreConfidence;
     private boolean doAuthBypass;
@@ -122,14 +121,12 @@ public class MongoDbScanRule extends AbstractAppParamPlugin {
         switch (this.getAttackStrength()) {
             case LOW:
                 doAllDataScan = true;
-                doCrashScan = false;
                 doJsonScan = true;
                 getMoreConfidence = false;
                 doAuthBypass = true;
                 break;
             default:
                 doAllDataScan = true;
-                doCrashScan = true;
                 doJsonScan = true;
                 getMoreConfidence = true;
                 doAuthBypass = true;
